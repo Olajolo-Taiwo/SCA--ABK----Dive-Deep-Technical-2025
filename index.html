@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 - Timilehin</title>
+  <style>
+    .line {
+      height: 2.5px;
+      background-color: #ccc;
+      margin: 10px 0;
+      width: 100%;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #fff;
+      padding: 30px 45px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .tag-line {
+      font-weight: bold;
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+.name{
+  display: flex;
+}
+.firstname {
+  margin-right: 50px;
+}
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid rgb(230, 228, 228);
+      font-size: 14px;
+    }
+
+    button {
+      display: flex;
+      justify-self: center;
+      margin-top: 20px;
+      padding: 10px 30px;
+      background-color: #00cc44;
+      color: white;
+      border: none;
+      font-weight: 600;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+
+    }
+
+    button:hover {
+      background-color: #009933;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Registration Form</h1>
+    <p>Please fill out the following information to register</p>
+
+    <p class="tag-line">STEP 1 OF 2</p>
+    <h2> Personal Information</h2>
+    <div class="line"></div>
+
+    <form id="myForm">
+      
+      <div class="name">
+        <div class="firstname">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="Enter your first name" required>
+        </div>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Enter your last name" required>
+        </div>
+        </div>
+
+          <label for="date">Date of Birth</label>
+          <input type="date" id="date" placeholder="DD/MM/YYYY" required>
+
+          <label for="contact">Contact Number</label>
+          <input type="text" id="contact" placeholder="Enter your phone number" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email address" required>
+
+      <button type="submit">Next</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      const formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        dateOfBirth: document.getElementById('date').value,
+        contactNumber: document.getElementById('contact').value,
+        email: document.getElementById('email').value
+      };
+
+      console.log("Form Submitted:");
+      console.log(formData);
+    });
+  </script>
+</body>
+</html>
